@@ -1,0 +1,174 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Sistema_Producto.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="Css/Principal.css" rel="stylesheet" type="text/css" />
+  
+    <script src="../Js/jquery-migrate-3.0.0.min.js"></script>
+    <script type="text/javascript" src ="../Js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src ="../Js/Validar.js"></script>
+  
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script>
+
+        function confirmDelete() {
+            if (confirm("¿Esta seguro de eliminar este registro?")) {
+
+                document.getElementById("Contenido_texto").value = "yes";
+            } else {
+
+                document.getElementById("Contenido_texto").value = "";
+            }
+        }
+
+
+        function PrintThisDiv(id) {
+
+            var HTMLContent = document.getElementById(id);
+            var Popup = window.open('about:black', id, 'width=500, height=500');
+
+            Popup.document.writeln('<html>');
+            Popup.document.writeln('<a href="javascript:;" onclick="window.print();">Imprimir</a>');
+            Popup.document.writeln(HTMLContent.innerHTML);
+            Popup.document.writeln('</body></html>');
+
+
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+    
+    <header>
+
+        <div class="content_wrapper">
+
+            <h1><a href=".." id="title">sistema de inventario</a></h1>
+            <div id="login">
+                <ul>
+
+                    <li> <a id="Iniciar" runat="server" href="Vistas/Login.aspx">Iniciar Session</a></li>
+                    <li> <a id="Cerrar" runat="server" href="Vistas/CerrarSesion.aspx">Cerrar Sesion</a></li>
+               
+                </ul>
+                
+            </div>
+            
+        </div>
+        
+    </header>
+    
+    <div>
+
+        <asp:ContentPlaceHolder ID="Contenido" runat="server">
+
+
+
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+
+    <div id="contentBody">
+        <h3>Funciones del sistema</h3>
+        
+        <div id="caja1">
+
+            <p> Compra Productos</p>
+            <asp:Image ID="pastel" Width="150px" runat ="server" ImageUrl="Images/Compras.png"/>
+            <p>Compras DE productos realizados a los proveedores</p>
+       
+       </div>
+
+        <div id="caja1">
+
+            <p> Venta Productos</p>
+            <asp:Image ID="Image0" Width="150px" runat ="server" ImageUrl="Images/Ventas.png"/>
+            <p>Venta DE productos rque a llvado los clientes</p>
+      
+
+        </div>
+
+        <div id="caja1">
+
+            <p> Bodega Productos</p>
+            <asp:Image ID="Image2" Width="150px" runat ="server" ImageUrl="Images/Bodega.png"/>
+            <p>Almacenamiento DE productos realizados a los Inventario</p>
+      
+
+        </div>
+
+        <div id="caja1">
+
+            <p> Registro Productos</p>
+            <asp:Image ID="Image3" Width="150px" runat ="server" ImageUrl="Images/Registros.png"/>
+            <p>Registro DE productos almacenados a los Inventario</p>
+      
+
+        </div>
+        
+    </div>
+
+    <footer>
+
+        <div id="footer">
+
+            <h3>Siguenos en las redes sociales</h3>
+
+            <div id="caja2">
+
+                <a href="http://plus.google.com/+AlexPagoada" class="fbk" target="_blank">&nbsp</a>
+                <p>Haste fans</p>
+
+            </div>
+
+                        <div id="caja2">
+
+                <a href="http://plus.google.com/+AlexPagoada" class="twitter" target="_blank">&nbsp</a>
+                <p>Siguenos fans</p>
+
+            </div>
+
+
+                        <div id="caja2">
+
+                <a href="http://plus.google.com/+AlexPagoada" class="google" target="_blank">&nbsp</a>
+                <p>Agreganos ha tu circulo</p>
+
+            </div>
+
+            <div id="caja2">
+
+                <a href="http://plus.google.com/+AlexPagoada" class="youtube" target="_blank">&nbsp</a>
+                <p>Visitanos en nuestro mail</p>
+
+            </div>
+
+            <div id="copy">
+                 
+                <p>
+               
+                    &copy; <%: DateTime.Now.Year %> Programadores AFSC    
+
+               </p>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+</body>
+</html>

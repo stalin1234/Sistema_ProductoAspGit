@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Sistema_Producto
+{
+    public partial class Inventario : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+            if (Session["usuario"] == " ")
+            {
+                Response.Redirect("Login.aspx");
+            }
+
+            string TipoUser = Convert.ToString(Session["TipoUser"]);
+            if(TipoUser == "Empl")
+            {
+
+                Reportes.Visible = false;
+            }
+
+           
+
+        }
+    }
+}
